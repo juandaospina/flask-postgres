@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 from .error_handler import error_not_found
 from app.config import config
@@ -11,6 +12,9 @@ app = Flask(__name__)
 def create_app():
     # Config
     app.config.from_object(config["development"])
+
+    # CORS
+    CORS(app)
 
     # Blueprints
     app.register_blueprint(movie_bp, url_prefix='/api/movie')
