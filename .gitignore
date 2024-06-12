@@ -1,0 +1,6 @@
+# Environments
+.env
+venv/
+
+# Cache / Compiled / DLL files
+__pycache__/
